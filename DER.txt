@@ -13,18 +13,18 @@
 | +-| PK | id                  |-+  |  | PK | id               |
 +-+>| FK | account_type_id     | +--+->| FK | account_id       |
   | |    | name                |    +->| FK | category_id      | 
-  | |    | initial_date_balance|       |    | date             |
-  | |    | initial_balance     |       |    | description      |
-  | |    | balance             |       |    | amount           | 	
-  | +--------------------------+       +-----------------------+
+  | |    | current_balance     |       |    | date             |
+  | +--------------------------+       |    | description      |
+  |                                    |    | amount           | 	
+  |                                    +-----------------------+
   |
-  | +------------------+
-  | |      Bills       |
-  | |------------------|
-  | | PK | id          |
-  +>| FK | account_id  |
-    |    | amount      |
-    |    | due_date    |
-    |    | occurrence  |
-    |    | paid        |
+  | +------------------+    +------------------+
+  | |      Bills       |    | BalanceHistory   |
+  | |------------------|    |------------------|
+  | | PK | id          |    | PK id
+  +>| FK | account_id  |    |    date
+    |    | amount      |    | FK  account_id
+    |    | due_date    |    |    start_balance
+    |    | occurrence  |    |    end_balance
+    |    | paid        |    +------------------+
     +------------------+
