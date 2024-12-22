@@ -1,5 +1,26 @@
 # README
 
+Current Tech Stack
+- Rails 7.0
+- Ruby 3.3.0
+- RSpec
+- Docker 27
+- DockerCompose 2.32
+- PostgreSQL 17
+
+## Setup docker
+``` $ docker-compose up -d ```
+
+## Setup gems
+``` $ bundle install ``` 
+
+## Setup database
+``` $ bin/rails db:setup ``` 
+
+## Start server
+``` $ bin/rails s ``` 
+
+## Project Plans
 Project Name: Wally
 
 
