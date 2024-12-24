@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Account, type: :model do
@@ -18,8 +20,17 @@ RSpec.describe Account, type: :model do
     end
 
     it 'is invalid if current_balance was not a number' do
-      account = build(:account, current_balance: '123ABC' )
+      account = build(:account, current_balance: '123ABC')
       expect(account).not_to be_valid
+    end
+  end
+
+  describe '#Model Associations' do
+    let(:resource) { build(:account) }
+
+    it 'has one account_type associated' do
+      expect(resource.account_type).to be_present
+      expect(resource.account_type).to be_a(AccountType)
     end
   end
 end
